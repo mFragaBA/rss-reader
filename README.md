@@ -9,11 +9,12 @@ Implementation of an rss reader lib I made for funsies
 
 TODO
 
-# Checklist
+# Roadmap
 
 - [ ] CRUD rss feed
 - [ ] fetch from rss feeds
 - [ ] UI/CLI app
+- [ ] rssCloud support
 - [ ] WASM support
 - ... TODO
 
