@@ -1,12 +1,12 @@
 use reqwest::Result;
-
-pub mod rss;
-pub mod rss_item;
+use rss::Channel;
 
 pub async fn list_feeds() -> Result<()> {
-    let request = reqwest::get("https://ntietz.com/atom.xml").await?;
-    let text = request.text().await?;
-    dbg!(text);
+    let request = reqwest::get("https://www.rssboard.org/files/sample-rss-2.xml").await?;
+    let text = request.bytes().await?;
+
+    let channel = Channel::read_from(&text[..]).unwrap();
+    dbg!(channel);
 
     Ok(())
 }
